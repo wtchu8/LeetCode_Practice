@@ -10,7 +10,9 @@
 #     Input: l1 = [2,4,3], l2 = [5,6,4]
 #     Output: [7,0,8]
 #     Explanation: 342 + 465 = 807.
-# Results: In Progress
+# Results: Success
+#   Runtime: 112 ms, faster than 5.01% of Python3 online submissions for Add Two Numbers.
+#   Memory Usage: 14.4 MB, less than 12.35% of Python3 online submissions for Add Two Numbers.
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -19,11 +21,13 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        #Runs addition operation of two ListNodes
         x1 = self.getNumber(l1)
         x2 = self.getNumber(l2)
-        print(x1+x2)
+        return(self.numToListNode(x1+x2))
 
     def getNumber(self, l1: ListNode) -> int:
+        # Function converts a ListNode to a number
         total = 0
         pow = 1
         li = l1
@@ -38,15 +42,14 @@ class Solution:
         return(total)
     
     def numToListNode(self, x: int) -> ListNode:
-        dig1 = x%10
-        rest1 = x//10
-        dig2 = rest1%10
-        rest2 = rest1//10
-        dig3 = rest2%10
-        rest3 = rest2//10
-        ans = ListNode(dig1,ListNode(dig2,ListNode(dig3)))
-    
-#print('testing - start')
-#x=ListNode(9,ListNode(8,ListNode(7)))
-#print(x.next.val)
-#print('testing - end')
+        # Function converts a number to a ListNode
+        first_iteration = True
+        # Converting to a string and iterating through string goes first to last digit
+        for dig in str(x):
+            # On first iteration, initialize node with no next
+            if first_iteration == True:
+                out_ListNode = ListNode(dig)
+            else:
+                out_ListNode = ListNode(dig,out_ListNode)
+            first_iteration = False
+        return(out_ListNode)
