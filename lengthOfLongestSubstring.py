@@ -67,8 +67,8 @@ class Solution:
 #       print("longest_len: ",longest_len)
         
 # Test conditions
-#ans = Solution()
-#print(ans.lengthOfLongestSubstring("abcabcbb"))
-#print(ans.lengthOfLongestSubstring("bbbbb"))
-#print(ans.lengthOfLongestSubstring("bb"))
-#print(ans.lengthOfLongestSubstring("ab"))
+ans = Solution()
+print(ans.lengthOfLongestSubstring("abcabcbb"))
+print(ans.lengthOfLongestSubstring("bbbbb"))
+print(ans.lengthOfLongestSubstring("bb"))
+print(ans.lengthOfLongestSubstring("ab"))

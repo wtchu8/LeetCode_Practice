@@ -15,10 +15,11 @@
 #   Memory Usage: 14.4 MB, less than 12.35% of Python3 online submissions for Add Two Numbers.
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         #Runs addition operation of two ListNodes
